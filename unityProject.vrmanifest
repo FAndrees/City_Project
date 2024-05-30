@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.city.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\judit\\Downloads\\City_Project-main(1)\\City_Project-main\\actions.json",
+      "action_manifest_path": "C:\\Users\\judit\\Downloads\\City_Project_2-main(2)\\City_Project_2-main\\actions.json",
       "strings": {
         "en_us": {
           "name": "City [Testing]"
