@@ -27,18 +27,18 @@ Users can freely explore a virtual city environment by giving input on an HTC Vi
 Key bindings are programmed for HTC Vive controllers. To ensure compatibility with other devices, check the key bindings in Steam VR.
  
 ## Scene and Custom Scripts
-The "City.unity" file with the original Unity scene can be found in the folder [MyScenes](https://github.com/FAndrees/City_Project_2/tree/main/Assets/MyScenes).
+The "City.unity" file with the original Unity scene can be found in the folder [MyScenes](https://github.com/FAndrees/City_Project/tree/main/Assets/MyScenes).
  
-The C#-code can be found in the folder [MyScripts](https://github.com/FAndrees/City_Project_2/tree/main/Assets/MyScripts). The custom scripts include:
+The C#-code can be found in the folder [MyScripts](https://github.com/FAndrees/City_Project/tree/main/Assets/MyScripts). The custom scripts include:
 - "Checkpoint.cs" changes the material of the checkpoint on "trigger enter" and destroys it on "trigger exit"
 - "m_Checkpoint.cs" creates a single logic for each of the checkpoints (depreciated) (Checkpoints use the tag "Checkpoint")
 - "Dark.cs" attaches a cylinder ("Drum.obj") to the Steam VR main camera when the application is loaded, can be dis/enabled by pressing 0 on the numpad
 - "Clear_Flags.cs" masks the skybox when the cylinder is displayed
 - “Menu.cs” deactivates the input field (enter on the numpad)
 - "VRController.cs" enables the magic carpet locomotion, height and terrain handling. As it requires only a boolean input variable in the current version (m_MovePress.state) other input devices are easily implementable if desired 
-- "Output.cs" contains the logging routine and works in editor. Stored in [City_Data](https://github.com/FAndrees/City_Project_2/tree/main/City_Data) folder with the built application (adjust the path according to your own needs)
+- "Output.cs" contains the logging routine and works in editor. Stored in [City_Data](https://github.com/FAndrees/City_Project/tree/main/City_Data) folder with the built application (adjust the path according to your own needs)
  
-Additionally, custom material is included in [MyScripts](https://github.com/FAndrees/City_Project_2/tree/main/Assets/MyScripts):
+Additionally, custom material is included in [MyScripts](https://github.com/FAndrees/City_Project/tree/main/Assets/MyScripts):
 - "Material0.mat" default material for the Checkpoint
 - "Material1.mat" material for the Checkpoint on "trigger enter"
 - "Material2.mat" material for the Checkpoint on "trigger exit"
@@ -49,7 +49,7 @@ Custom prefabs:
   - keep the differences of the coordinate systems in mind: Blender right handed z-up <- -> Unity left-handed y-up
  
 ### Project Layout
-The main folder [Assets](https://github.com/FAndrees/City_Project_2/tree/main/Assets) contains:
+The main folder [Assets](https://github.com/FAndrees/City_Project/tree/main/Assets) contains:
 - "Do not shoot Aliens/Game assets" with prefab png-files for the checkpoints
 - “EasyRoads3D Assets” with street objects and materials, such as guard rails
 - “MyScenes” with the “City.unity” file
@@ -60,7 +60,7 @@ The main folder [Assets](https://github.com/FAndrees/City_Project_2/tree/main/As
 - “Tree_Textures” with textures  for the background of the scene
 - “Winridge City Assets” with the prefabs for buildings and other decor used for the city scene [the scene itself is a derivative of the Winridge City Demo Scene]
  
-In the other main folders, [ProjectSettings](https://github.com/FAndrees/City_Project_2/tree/main/ProjectSettings) and [SteamVR custom bindings](https://github.com/FAndrees/City_Project_2/tree/main/SteamVR_SteamVR_city/1) are shared for this project.
+In the other main folders, [ProjectSettings](https://github.com/FAndrees/City_Project/tree/main/ProjectSettings) and [SteamVR custom bindings](https://github.com/FAndrees/City_Project/tree/main/SteamVR_SteamVR_city/1) are shared for this project.
  
 ## Supplementary
 Each file is complemented with the respective meta-file.
