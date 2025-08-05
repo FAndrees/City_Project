@@ -5,7 +5,6 @@ using Valve.VR;
 
 public class VRController : MonoBehaviour
 {
-
     public float m_Sensitivity = 0.1f;
     public float m_MaxSpeed = 0.7f;
   
@@ -24,7 +23,6 @@ public class VRController : MonoBehaviour
     private void Awake()
     {
         m_CharacterController = GetComponent<CharacterController>();
-
     }
 
     private void Start()
@@ -32,7 +30,6 @@ public class VRController : MonoBehaviour
         m_CameraRig = SteamVR_Render.Top().origin;
         m_Head = SteamVR_Render.Top().head;
     }
-
 
     private void Update()
     {
@@ -61,12 +58,9 @@ public class VRController : MonoBehaviour
       
         if (m_MovePress.state)
         {
-           
             m_Speed += m_MoveValue.axis.y * m_Sensitivity;
             m_Speed = Mathf.Clamp(m_Speed, -m_MaxSpeed, m_MaxSpeed);
-            movement += orientation * (m_Direction + m_Speed * Vector3.forward) * Time.deltaTime;
-
-
+            movement += orientation * (m_Direction * Vector3.left + m_Speed * Vector3.forward) * Time.deltaTime;
         }
         m_CharacterController.Move(movement);
 
@@ -101,15 +95,13 @@ public class VRController : MonoBehaviour
             newPosition.y = m_Terraindown.point.y + 0.05f;
             newPosition.x = m_CameraRig.position.x;
             newPosition.z = m_CameraRig.position.z;
-            
-                m_CharacterController.transform.position = newPosition;
+            m_CharacterController.transform.position = newPosition;
         }
-
-
 
     }
     private void Reset()
-    { if (Input.GetKeyDown(KeyCode.Escape))
+    { 
+    if (Input.GetKeyDown(KeyCode.Escape))
         { Vector3 startPosition = Vector3.zero;
             startPosition.x = 115f;
             startPosition.y = 342.7f;
