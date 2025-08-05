@@ -9,7 +9,7 @@ public class VRController : MonoBehaviour
     public float m_MaxSpeed = 0.7f;
   
     public SteamVR_Action_Boolean m_MovePress = null;
-    //public SteamVR_Action_Vector2 m_MoveValue = null;
+    public SteamVR_Action_Vector2 m_MoveValue = null;
 
     private float m_Speed = 0.0f;
     private float m_Direction = 0.0f;
