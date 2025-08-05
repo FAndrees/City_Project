@@ -20,9 +20,7 @@ public class Output : MonoBehaviour
     private String Name;
     private List<string[]> rowData = new List<string[]>();
     private int counter;
-    private int counter1;
     private int counter2;
-    private int counter3;
     int Checkpoints_remaining;
     private void Awake()
     {
@@ -60,33 +58,27 @@ public class Output : MonoBehaviour
         void Update()
     {
         if (InputField.interactable == false)
-        { Save(); }
+        { 
+        Save(); 
+        }
         if (Input.GetMouseButtonDown(1))
         {
             Application.Quit();
         }
-        //if (Input.GetKeyDown(KeyCode.KeypadEnter))
-
-        //{
-       //     Save();
-       // }
-
+        
         if (Input.GetKeyDown(KeyCode.Keypad0))
-        { counter2++;
-        //    Save();
+        { 
+        counter2++;
         }
-       // if (m_MoveValue.axis.x != 0)
-      //  { Save(); }
+       
         GameObject[] Checkpoints = GameObject.FindGameObjectsWithTag("Checkpoint");
         if (Checkpoints.Length != Checkpoints_remaining)
         {
             counter++;
             Debug.Log(counter);
             Checkpoints_remaining = Checkpoints.Length;
-           // Save();
             return;
         }
-        
 
     }
 
@@ -103,9 +95,9 @@ public class Output : MonoBehaviour
         rowDataTemp[5] = Camera.transform.position.x.ToString();//x Position Head
         rowDataTemp[6] = Camera.transform.position.y.ToString();//y Position Head
         rowDataTemp[7] = Camera.transform.position.z.ToString();//z Position Head
-        rowDataTemp[8] = Camera.transform.eulerAngles.x.ToString();//x Tilt Head
-        rowDataTemp[9] = Camera.transform.eulerAngles.y.ToString();//y Tilt Head
-        rowDataTemp[10] = Camera.transform.eulerAngles.z.ToString();//z Tilt Head
+        rowDataTemp[8] = Camera.transform.eulerAngles.x.ToString();//x Rotation Head
+        rowDataTemp[9] = Camera.transform.eulerAngles.y.ToString();//y Rotation Head
+        rowDataTemp[10] = Camera.transform.eulerAngles.z.ToString();//z Rotation Head
 
 
         rowData.Add(rowDataTemp);
@@ -139,14 +131,10 @@ public class Output : MonoBehaviour
     string GetPath()
     {
 #if UNITY_EDITOR
-       
-        //return Application.dataPath + "/CSV_City_Nose/"  + DateTime.Now.ToLongDateString() + "_" + InputField.text.ToString() + ".csv";
-        
+          
         return "C:/Users/Josupeit/Desktop/CSV_City/" + DateTime.Now.ToLongDateString() + "_" +  Name + "_"+ InputField.text.ToString() + ".csv";
 
 #else
-        //return "C:/Users/Josupeit/Desktop/CSV_City/" + DateTime.Now.ToLongDateString() + "_" + InputField.text.ToString() + ".csv";
-        //return Application.dataPath + "/CSV_City2/" + DateTime.Now.ToLongDateString() + "_" + InputField.text.ToString() + ".csv";
         return Application.dataPath + "/" + DateTime.Now.ToLongDateString() + "_" +  Name + "_" + InputField.text.ToString() + ".csv";
 #endif
     }
