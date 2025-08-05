@@ -64,7 +64,7 @@ public class VRController : MonoBehaviour
            
             m_Speed += m_MoveValue.axis.y * m_Sensitivity;
             m_Speed = Mathf.Clamp(m_Speed, -m_MaxSpeed, m_MaxSpeed);
-            movement += orientation * (m_Direction * Vector3.left + m_Speed * Vector3.forward) * Time.deltaTime;
+            movement += orientation * (m_Direction + m_Speed * Vector3.forward) * Time.deltaTime;
 
 
         }
